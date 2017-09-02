@@ -14,3 +14,5 @@ Company: <%= link_to @job.company.name, company_path(@job.company) %>
 <br>
 
 <%= link_to "Edit Job", edit_company_job_path(@company, @job) %>
+
+<%= link_to "Delete Job", company_job_path(@company, @job), method: :delete %>
