@@ -42,7 +42,7 @@ class CategoriesController < ApplicationController
       flash.notice = "'#{@category.title}' category updated"
       redirect_to category_path(@category)
     else
-      flash.notice = "Error! '#{@category.title}' category already exists"
+      flash.notice = "Error! Must provide title for category"
       redirect_to edit_category_path(@category)
     end
   end
