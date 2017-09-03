@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-describe "User visits categories index" do
-  scenario "and can see all categories" do
+describe "User visits category show" do
+  scenario "and can see category" do
     category = create(:category)
 
     visit categories_path
