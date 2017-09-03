@@ -22,6 +22,6 @@ describe "User accesses new category form" do
     click_button "Create"
 
     expect(current_path).to eq new_category_path
-    expect(page).to have_content("Error! '#{category.title}' category already existsgs")
+    expect(page).to have_content("Error! '#{category.title}' category already exists")
   end
 end
