@@ -32,6 +32,21 @@ class CategoriesController < ApplicationController
     redirect_to categories_path
   end
 
+  def edit
+    @category = Category.find(params[:id])
+  end
+
+  def update
+    @category = Category.find(params[:id])
+    if @category.update(category_params)
+      flash.notice = "'#{@category.title}' category updated"
+      redirect_to category_path(@category)
+    else
+      flash.notice = "Error! '#{@category.title}' category already exists"
+      redirect_to edit_category_path(@category)
+    end
+  end
+
   private
 
   def category_params
