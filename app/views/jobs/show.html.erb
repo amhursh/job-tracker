@@ -1,5 +1,4 @@
-Title: <%= @job.title %>
-<br>
+<h2>Job: Title: <%= @job.title %></h2>
 
 Description: <%= @job.description %>
 <br>
@@ -13,6 +12,10 @@ City: <%= @job.city %>
 Company: <%= link_to @job.company.name, company_path(@job.company) %>
 <br>
 
+Category: <%= link_to @job.category.title, category_path(@job.category) %>
+<br />
+
 <%= link_to "Edit Job", edit_company_job_path(@company, @job) %>
+<br />
 
 <%= link_to "Delete Job", company_job_path(@company, @job), method: :delete %>
