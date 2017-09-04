@@ -15,5 +15,7 @@ FactoryGirl.define do
     sequence :city do |i|
       "jobcity#{i}"
     end
+
+    category
   end
 end
