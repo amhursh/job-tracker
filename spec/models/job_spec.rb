@@ -4,17 +4,35 @@ describe Job do
   describe "validations" do
     context "invalid attributes" do
       it "is invalid without a title" do
-        job = Job.new(level_of_interest: 80, description: "Wahoo", city: "Denver")
+        category = build(:category)
+        company = build(:company)
+        job = Job.new(level_of_interest: 80, description: "Wahoo", city: "Denver", company: company, category: category)
         expect(job).to be_invalid
       end
 
       it "is invalid without a level of interest" do
-        job = Job.new(title: "Developer", description: "Wahoo", city: "Denver")
+        category = build(:category)
+        company = build(:company)
+        job = Job.new(title: "Developer", description: "Wahoo", city: "Denver", company: company, category: category)
         expect(job).to be_invalid
       end
 
       it "is invalid without a city" do
-        job = Job.new(title: "Developer", description: "Wahoo", level_of_interest: 80)
+        category = build(:category)
+        company = build(:company)
+        job = Job.new(title: "Developer", description: "Wahoo", level_of_interest: 80, company: company, category: category)
+        expect(job).to be_invalid
+      end
+
+      it "is invalid without a company" do
+        category = build(:category)
+        job = Job.new(title: "Developer", description: "Wahoo", city: "Denver", category: category)
+        expect(job).to be_invalid
+      end
+
+      it "is invalid without a category" do
+        company = build(:company)
+        job = Job.new(title: "Developer", description: "Wahoo", city: "Denver", company: company)
         expect(job).to be_invalid
       end
     end
