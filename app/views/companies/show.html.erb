@@ -7,5 +7,6 @@
 
 <%= link_to "New Job", new_company_job_path(@company) %>
 
+<h4>Contacts:</h4>
 <%= render partial: 'companies/contact', collection: @company.contacts %>
 <%= render partial: 'contacts/form' %>

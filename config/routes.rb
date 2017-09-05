@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     resources :jobs do
       resources :comments, only: [:create]
     end
+    resources :contacts, only: [:create]
   end
 
 
