@@ -1,0 +1,43 @@
+<h1>Dashboard</h1>
+
+<h3><%= link_to "Job Count by Interest", '/jobs?sort=interest' %></h3>
+  <table>
+    <tr>
+      <th>Level of Interest</th>
+      <th>Job Count</th>
+    </tr>
+    <% @interest.each do |interest, count| %>
+      <tr class=<%= "level_of_interest_of_#{interest}" %>>
+        <td><%= interest %></td>
+        <td><%= count %></td>
+      </tr>
+    <% end %>
+  </table>
+
+<h3><%= link_to "Job Count by Location", '/jobs?sort=location' %></h3>
+  <table>
+    <tr>
+      <th>Location</th>
+      <th>Number of Jobs</th>
+    </tr>
+    <% @location.each do |location, count| %>
+      <tr class=<%= "count_for_#{location.delete(' ')}" %>>
+        <td><%= link_to location, "/jobs?location=#{location}" %></td>
+        <td><%= count %></td>
+      </tr>
+    <% end %>
+  </table>
+
+<h3>Top 3 Companies by Average Interest</h3>
+  <table>
+    <tr>
+      <th>Company</th>
+      <th>Avg. Level of Interest</th>
+    </tr>
+    <% @top_companies.each do |company| %>
+    <tr>
+      <td><%= company.first %></td>
+      <td><%= company.last %></td>
+    </tr>
+    <% end %>
+  </table>
