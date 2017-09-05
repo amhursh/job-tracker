@@ -8,7 +8,7 @@ describe "User accesses new category form" do
     fill_in "category[title]", with: "Senior"
     click_button "Create"
 
-    expect(current_path).to eq category_path(Category.find(1))
+    expect(current_path).to eq category_path(Category.find(6))
     expect(page).to have_content("Senior")
     expect(page).to have_content("'Senior' category added")
   end
