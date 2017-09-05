@@ -1,3 +1,2 @@
-<h6>Comment:</h6>
-
-<%= comment.content %>
+<p><%= comment.created_at.in_time_zone('Mountain Time (US & Canada)').strftime("%b %d, %Y - %l:%M%P") %>:
+   <strong><%= comment.content %></strong></p>
